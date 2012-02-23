@@ -1,4 +1,7 @@
-.PHONY: docs
+.PHONY: docs server
+
+server:
+	./restart.sh
 
 docs:
 	./build_docs.sh master docs/dev
