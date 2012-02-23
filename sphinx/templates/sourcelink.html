@@ -1,0 +1,15 @@
+{% if 'dev' in release %}
+  {% set srclink = "https://github.com/defnull/bottle/blob/master/docs/" %}
+{% else %}
+  {% set srclink = "https://github.com/defnull/bottle/blob/release-"+releases[1][0]+"/docs/" %}
+{% endif %}
+
+{%- if show_source and has_source and sourcename %}
+  <h3>{{ _('This Page') }}</h3>
+  <ul class="this-page-menu">
+    <li><a href="{{ srclink + pathto(sourcename, true)|e }}" rel="nofollow">{{ _('Show Source @GitHub') }}</a></li>
+  </ul>
+{%- endif %}
+
+
+
