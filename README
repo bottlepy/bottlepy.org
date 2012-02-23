@@ -3,6 +3,16 @@ Bottle Website Sources
 
 
 
+Requirements (debian)
+---------------------
+
+	python
+	git
+	sphinx (>=1.0 via pip)
+
+    texlive-latex-recommended
+    texlive-latex-extra
+    texlive-fonts-recommended
 
 LICENSE (Artwork)
 =================
