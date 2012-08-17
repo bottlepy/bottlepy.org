@@ -7,7 +7,7 @@
 {%- if show_source and has_source and sourcename %}
   <h3>{{ _('This Page') }}</h3>
   <ul class="this-page-menu">
-    <li><a href="{{ srclink + pathto(sourcename, true)|e }}" rel="nofollow">{{ _('Show Source @GitHub') }}</a></li>
+    <li><a href="{{ srclink + pathto(pagename, true)|e }}.rst" rel="nofollow">{{ _('Show Source @GitHub') }}</a></li>
   </ul>
 {%- endif %}
 
