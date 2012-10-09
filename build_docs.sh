@@ -35,8 +35,9 @@ pushd $repo_dir
  docs=`pwd`
 popd
 
-PYTHONPATH=$repo_dir sphinx-build -q -c sphinx -b html  $docs $build_dir/$branch/html
-PYTHONPATH=$repo_dir sphinx-build -q -c sphinx -b latex $docs $build_dir/$branch/latex
+PYTHONPATH=$repo_dir sphinx-build -q -c sphinx -b html     $docs $build_dir/$branch/html
+PYTHONPATH=$repo_dir sphinx-build -q -c sphinx -b latex    $docs $build_dir/$branch/latex
+PYTHONPATH=$repo_dir sphinx-build -q -c sphinx -b bottlepy $docs $build_dir/$branch/pickle
 
 pushd $build_dir/$branch
  pushd latex
@@ -58,5 +59,6 @@ popd
 # We rsync to keep mtime on unchanged files. Good for HTTP caching.
 test -d "$output/" || mkdir -p "$output/"
 rsync -vrc --exclude .doctrees $build_dir/$branch/html/ "$output/"
+rsync -vrc --exclude .doctrees $build_dir/$branch/pickle/ "$output/"
 rm -rf $build_dir/$branch
 
