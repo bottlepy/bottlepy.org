@@ -54,6 +54,7 @@ pushd $build_dir/$branch
  tar -cjf bottle-docs.tar.bz2 html
  zip -q -r -9 bottle-docs.zip html
  cp bottle-docs.* html
+ cp $repo_dir/bottle.py html
 popd
 
 # We rsync to keep mtime on unchanged files. Good for HTTP caching.
