@@ -119,6 +119,7 @@ POI.whereami = function() {
 
 
 
+/*
 $(document).resize(POI.refresh);
 $(window).resize(POI.refresh);
 $(window).scroll(POI.whereami);
@@ -134,4 +135,4 @@ $(document).ready(function() {
     POI.whereami();
 })
 
-
+*/

@@ -16,12 +16,16 @@
 /* Positional Layout */
 
 body {
-  width: {{ page_width }};
-  margin: 0 auto 0 auto;
-  padding: 15px;
+  margin: 0;
 }
 
 div.document {
+  width: {{ page_width }};
+  margin: 0 auto 0 auto;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 div.documentwrapper {
@@ -36,6 +40,7 @@ div.bodywrapper {
 div.sphinxsidebar {
   width: {{ sidebar_width }};
 }
+
 
 div.sphinxsidebarwrapper {
   margin: 0 15px;
@@ -57,8 +62,9 @@ body {
 
 div.body {
   border: 1px solid {{ color_border }};
+  border-width: 0 1px;
   background-color: {{ color_document }};
-  padding: 0 15px 15px 15px;
+  padding: 2em;
   color: {{ textcolor_document }};
   line-height: 1.4em;
 }
@@ -66,23 +72,29 @@ div.body {
 div.body h2 {
   background-color: {{ color_border }};
   color: {{ textcolor_border }};
-  margin: 2em -15px 1em -30px;
+  margin: 3em -15px 1em -15px;
   padding: 7px 15px 5px 15px;
-  border-top-left-radius: 15px;
-  -moz-border-radius-topleft: 15px;
-  -webkit-border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  -moz-border-radius-bottomleft: 15px;
-  -webkit-border-bottom-left-radius: 15px;
-}
-
-div.body h3 {
-  margin: 2em 0 1em 0;
+  font-size: 120%;
+  text-transform: uppercase;
+  letter-spacing:1px;
 }
 
 div.body h2 a {
   color: {{ linkcolor_border }};
 }
+
+div.body h3 {
+  margin: 3em 0 0em 0;
+  font-size: 120%;
+  text-transform: uppercase;
+  letter-spacing:1px;
+  color: {{ color_border }};
+}
+
+p.rubric {
+  color: {{ color_border }};
+}
+
 
 a {
   color: {{ linkcolor_document }};
@@ -100,12 +112,18 @@ pre {
   background-color: {{ color_body }};
   margin: 1em 2em;
   padding: 0.5em;
+  border: 1px dotted {{ color_border }};
+  border-width: 1px 0;
 }
 
 dd pre, dd div.admonition {
   margin: 1em 0;
   padding: 5px 5px;
   border: 1px solid #ccc;
+}
+
+dt {
+  font-weight: bold;
 }
 
 div.admonition p.last {
@@ -148,6 +166,7 @@ pre {
 code, tt.docutils {
   font-size: 0.9em;
   padding: 0 0.2em;
+  background-color: {{ color_body }};
 }
 
 tt.xref {
@@ -160,12 +179,6 @@ tt.xref {
 img.floatright {
   float: right;
   margin: 0.5em 1em;
-}
-
-div.body {
-  border-radius: 10px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
 }
 
 div.sphinxsidebar ul {
@@ -220,35 +233,16 @@ div.sphinxsidebar input:focus {
 }
 
 div.footer {
+  background-color: {{ color_border }};
+  color: white;
   text-align: center;
   font-size: 75%;
   padding: 1em;
-  opacity: 0.5;
 }
 
-/* Fancy Legend  */
-
-.sidelegend {
-  position: fixed;
-  overflow: hidden;
-  font-size: small;
-  background: url('link_icon.png') no-repeat 5px center;
-  padding: 0px 0px 0px 20px;
+div.footer a {
+  color: white;
+  font-weight: bold;
 }
 
-.sidelegend a {
-  border-top-left-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -webkit-border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  padding: 2px 10px 2px 10px;
-  background: {{ color_border }};
-  color: {{ linkcolor_border }};
-  display: block;
-}
 
-.sidelegend a:hover {
-  text-decoration: none;
-}
