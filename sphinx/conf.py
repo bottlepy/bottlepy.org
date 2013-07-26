@@ -259,4 +259,4 @@ intersphinx_mapping = {'python': ('http://docs.python.org/', None),
 
 autodoc_member_order = 'bysource'
 
-locale_dirs = ['./locale']
+locale_dirs = ['./_locale']

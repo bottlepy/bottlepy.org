@@ -22,7 +22,7 @@ class BootstrapHTMLTranslator(HTMLTranslator):
         self.body.append(self.starttag(
             node, 'div', CLASS=self.admonition_to_alert[name]))
         if name and name != 'seealso':
-            self.body.append('<h4 class="alert-heading">%s</h4>' % admonitionlabels[name])
+            self.body.append(u'<h4 class="alert-heading">%s</h4>' % admonitionlabels[name])
         self.set_first_last(node)
 
 class TOCExtractor(docutils.nodes.SparseNodeVisitor):

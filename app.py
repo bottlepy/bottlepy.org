@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.6
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
@@ -8,6 +8,7 @@ app = application = bottle.Bottle()
 
 docs_path   = os.path.join(os.path.dirname(__file__), 'docs/')
 static_path = os.path.join(os.path.dirname(__file__), 'static/')
+languages = 'en cn'.split()
 
 @app.get('/')
 def index():
@@ -36,4 +37,5 @@ def static(filename):
 
 # Start server
 if __name__ == '__main__':
-	bottle.run(app, debug=True)
+    import sys
+    bottle.run(app, port=int(sys.argv[1]), debug='debug' in sys.argv)
