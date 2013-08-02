@@ -1,4 +1,4 @@
-.PHONY: docs server bootstrap
+.PHONY: docs server bootstrap deploy
 
 docs:
 	./build_docs.sh master docs/dev
@@ -13,3 +13,7 @@ bootstrap:
 
 server:
 	./server restart
+
+deploy:
+	ssh marc@bottlepy.org 'cd bottlepy.org && git pull && make server && make docs'
+
