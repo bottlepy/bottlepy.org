@@ -10,7 +10,7 @@ chmod 755 bottle.py
 for n in 0 1 2 3; do
   pidfile="/tmp/bottlepy.$n.pid"
   if [ $1 = 'stop' -o $1 = 'restart' ]; then
-    /sbin/start-stop-daemon --stop --pidfile $pidfile
+    /sbin/start-stop-daemon --stop --retry INT/2/KILL/5  --pidfile $pidfile
   fi
   if [ $1 = 'start' -o $1 = 'restart' ]; then
     /sbin/start-stop-daemon --start --background --chdir `pwd` \
