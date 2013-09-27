@@ -245,4 +245,21 @@ div.footer a {
   font-weight: bold;
 }
 
-
+@media(max-width: 800px) {
+  div.sphinxsidebar {
+    display: none;
+  }
+  div.bodywrapper {
+    margin: 0;
+  }
+  div.document {
+    width: 100%;
+  }
+  div.body {
+    padding: 1em;
+  }
+  pre {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+  }
+}
