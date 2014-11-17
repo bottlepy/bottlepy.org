@@ -29,7 +29,7 @@ output=$2
 test -d $repo_dir || git clone git://github.com/defnull/bottle.git $repo_dir
 pushd $repo_dir
  git fetch origin
- git checkout -f -B "docs-$branch" "origin/$branch"
+ git checkout -f "docs-$branch" || git checkout -f -b "docs-$branch" "origin/$branch"
  git clean -d -x -f
  test -d apidocs && cd apidocs || cd docs
  docs=`pwd`
