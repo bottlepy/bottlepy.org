@@ -2,7 +2,7 @@ language: python
 python:
   - "2.7"
 install:
-  - "apt-get install texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended"
+  - "sudo apt-get install texlive-latex-extra texlive-latex-recommended texlive-fonts-recommended"
   - "pip install sphinx"
 # command to run tests
 script: make docs
