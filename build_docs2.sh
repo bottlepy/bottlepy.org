@@ -23,7 +23,7 @@ build() {
   output=$2
   lang=$3
 
-  test -d $repo_dir || git clone git://github.com/defnull/bottle.git $repo_dir
+  test -d $repo_dir || git clone git://github.com/bottlepy/bottle.git $repo_dir
   pushd $repo_dir
    git fetch origin
    git checkout -f -B "docs-$branch" "origin/$branch"

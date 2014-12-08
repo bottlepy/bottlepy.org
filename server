@@ -3,7 +3,7 @@
 cd `dirname $0`
 
 # Download bottle module
-wget -q -O bottle.py --no-check-certificate https://github.com/defnull/bottle/raw/master/bottle.py
+wget -q -O bottle.py --no-check-certificate https://github.com/bottlepy/bottle/raw/master/bottle.py
 chmod 755 bottle.py
 
 # Start 4 new processes

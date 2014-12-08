@@ -23,12 +23,12 @@ def docs(version, filename='index.html'):
 
 @app.get('/commit/:hash#[a-zA-Z0-9]+#')
 def commit(hash):
-    url = 'https://github.com/defnull/bottle/commit/%s'
+    url = 'https://github.com/bottlepy/bottle/commit/%s'
     bottle.redirect(url % hash.lower())
 
 @app.get('/bottle.py')
 def download():
-    url = 'https://github.com/defnull/bottle/raw/master/bottle.py'
+    url = 'https://github.com/bottlepy/bottle/raw/master/bottle.py'
     bottle.redirect(url)
 
 @app.get('/<filename:path>')

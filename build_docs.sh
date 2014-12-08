@@ -26,7 +26,7 @@ build_dir='/tmp/update_docs_bottle.build'
 branch=$1
 output=$2
 
-test -d $repo_dir || git clone git://github.com/defnull/bottle.git $repo_dir
+test -d $repo_dir || git clone git://github.com/bottlepy/bottle.git $repo_dir
 pushd $repo_dir
  git fetch origin
  git checkout -f "docs-$branch" || git checkout -f -b "docs-$branch" "origin/$branch"

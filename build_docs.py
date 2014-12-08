@@ -5,7 +5,7 @@ import tempfile
 
 parser = argparse.ArgumentParser(description='Build the documentation')
 parser.add_argument('--git',
-                   default='https://github.com/defnull/bottle.git',
+                   default='https://github.com/bottlepy/bottle.git',
                    help='Path or URL to git repository')
 parser.add_argument('--config',
                    help='Path to the sphinx config file.')
