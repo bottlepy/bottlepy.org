@@ -10,7 +10,7 @@
   {% endif %}
 <ul>
   {% for v, name in releases %}
-    {% if v == version %}
+    {% if v in version %}
       <li><b>Bottle {{v}}</b> ({{name}})</li>
     {% else %}
       <li><a href="/docs/{{v}}/">Bottle {{v}}</a> ({{name}})</li>
