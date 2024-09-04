@@ -41,10 +41,18 @@ div.sphinxsidebar {
   width: {{ sidebar_width }};
 }
 
-
 div.sphinxsidebarwrapper {
   margin: 0 15px;
   padding: 0;
+}
+
+p.caption {
+  font-weight: bold;
+  margin-bottom: 0 !important;
+}
+
+p.caption + ul {
+  margin-top: .2em !important;
 }
 
 div.related {

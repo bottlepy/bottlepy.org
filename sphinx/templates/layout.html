@@ -20,9 +20,8 @@
 
 {% block footer %}
     <div class="footer">
-    &copy; <a href="{{ pathto('index') }}#license">Copyright</a> {{ copyright|e }} - <a href="{{ pathto('contact') }}">Contact</a><br />
-    Last updated on {{ last_updated|e }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version|e }}.<br />
-    Powered by Bottle {{version|e}}
+    &copy; <a href="{{ pathto('index') }}#license">Copyright</a> {{ copyright|e }}<br />
+    Last updated on {{ last_updated|e }}. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version|e }}.
     </div>
 {% endblock %}
 

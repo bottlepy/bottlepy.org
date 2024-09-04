@@ -2,7 +2,7 @@
 {% if 'dev' in release %}
   {% set srclink = "https://github.com/bottlepy/bottle/blob/master/docs/" %}
 {% else %}
-  {% set srclink = "https://github.com/bottlepy/bottle/blob/release-"+releases[1][0]+"/docs/" %}
+  {% set srclink = "https://github.com/bottlepy/bottle/blob/release-"+release+"/docs/" %}
 {% endif %}
 
 {%- if show_source and has_source and sourcename %}

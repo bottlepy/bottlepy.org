@@ -1,0 +1,3 @@
+# branch slug name
+master       dev  development
+release-0.12 0.12 stable

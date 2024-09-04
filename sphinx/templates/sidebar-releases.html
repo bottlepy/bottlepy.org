@@ -1,0 +1,14 @@
+<h3>Releases</h3>
+  {% if 'dev' in release or 'rc' in release %}
+  <p style='font-size: 0.75em; color: darkred'>You are looking at the documentation for <b>Bottle-{{release}}</b>, which is
+    not released yet. Switch to the latest <a href="/docs/stable/"><b>stable release</b></a>?</p>
+  {% endif %}
+<ul>
+  {% for branch, slug, name in releases %}
+    {% if slug == version %}
+      <li><b>Bottle {{slug}}</b> ({{name}})</li>
+    {% else %}
+      <li><a href="/docs/{{slug}}/">Bottle {{slug}}</a> ({{name}})</li>
+  {% endif %}
+  {% endfor %}
+</ul>
