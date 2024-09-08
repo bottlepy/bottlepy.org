@@ -20,7 +20,7 @@ body {
 }
 
 div.document {
-  width: {{ page_width }};
+  max-width: {{ page_width }};
   margin: 0 auto 0 auto;
 }
 
