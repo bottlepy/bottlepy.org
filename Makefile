@@ -9,6 +9,9 @@ docs:
 	#./build_docs.sh release-0.9 htdocs/docs/0.9
 	cd htdocs/docs; ln -fs --no-dereference 0.13 stable
 
+watch:
+	./build_docs.sh master --watch
+
 deploy: docs
 	rsync -av htdocs/ root@bottlepy.org:/srv/stack/nginx/vhost/bottlepy.org/
 

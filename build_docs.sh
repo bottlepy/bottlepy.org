@@ -2,6 +2,7 @@
 
 cd $(dirname $0)
 set -e
+set -x
 
 branch=$1
 output=$2
@@ -23,11 +24,17 @@ pushd "$repo_dir"
   docs_dir=`pwd`
 popd
 
-rm -rf $build_dir/$branch
-PYTHONPATH=$repo_dir sphinx-build -E -q -c sphinx -b html $docs_dir $build_dir/$branch/html
-cp $repo_dir/bottle.py $build_dir/$branch/html
+rm -rf $build_dir/$branch/html/*
+mkdir -p $build_dir/$branch/html
 
-# We rsync to keep mtime on unchanged files. Good for HTTP caching.
-mkdir -p "$output"
-rsync -vrc --exclude .doctrees --delete $build_dir/$branch/html/ "$output"
+if [ "$output" == "--watch" ]; then
+  PYTHONPATH=$repo_dir sphinx-autobuild -E -c sphinx -b html $docs_dir $build_dir/$branch/html
+else
+  PYTHONPATH=$repo_dir sphinx-build -E -q -c sphinx -b html $docs_dir $build_dir/$branch/html
+  cp $repo_dir/bottle.py $build_dir/$branch/html
+
+  # We rsync to keep mtime on unchanged files. Good for HTTP caching.
+  mkdir -p "$output"
+  rsync -vrc --exclude .doctrees --delete $build_dir/$branch/html/ "$output"
+fi
 
